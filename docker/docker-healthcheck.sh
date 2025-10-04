@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -a
+[ -f .env ] && source .env
+set +a
+
 # Send a request to the specified URL
 response=$(curl --write-out '%{http_code}' --silent --output /dev/null http://localhost:${SERVER_PORT:-3001}/api/ping)
 
