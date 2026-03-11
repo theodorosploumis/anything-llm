@@ -1,5 +1,6 @@
 const { maximumChunkLength } = require("../../helpers");
 const { Ollama } = require("ollama");
+const { OllamaAILLM } = require("../../AiProviders/ollama");
 
 class OllamaEmbedder {
   constructor() {
@@ -15,7 +16,16 @@ class OllamaEmbedder {
       ? Number(process.env.OLLAMA_EMBEDDING_BATCH_SIZE)
       : 1;
     this.embeddingMaxChunkLength = maximumChunkLength();
-    this.client = new Ollama({ host: this.basePath });
+    this.authToken = process.env.OLLAMA_AUTH_TOKEN;
+
+    const headers = this.authToken
+      ? { Authorization: `Bearer ${this.authToken}` }
+      : {};
+    this.client = new Ollama({
+      host: this.basePath,
+      headers,
+      fetch: OllamaAILLM.applyOllamaFetch(),
+    });
     this.log(
       `initialized with model ${this.model} at ${this.basePath}. Batch size: ${this.maxConcurrentChunks}, num_ctx: ${this.embeddingMaxChunkLength}`
     );

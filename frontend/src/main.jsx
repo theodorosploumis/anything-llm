@@ -11,7 +11,7 @@ import SimpleSSOPassthrough from "@/pages/Login/SSO/simple";
 import OnboardingFlow from "@/pages/OnboardingFlow";
 import "@/index.css";
 
-const isDev = process.env.NODE_ENV !== "production";
+const isDev = import.meta.env.DEV;
 const REACTWRAP = isDev ? React.Fragment : React.StrictMode;
 
 const router = createBrowserRouter([
@@ -370,6 +370,14 @@ const router = createBrowserRouter([
             "@/pages/GeneralSettings/MobileConnections"
           );
           return { element: <ManagerRoute Component={MobileConnections} /> };
+        },
+      },
+      // Catch-all route for 404s
+      {
+        path: "*",
+        lazy: async () => {
+          const { default: NotFound } = await import("@/pages/404");
+          return { element: <NotFound /> };
         },
       },
     ],

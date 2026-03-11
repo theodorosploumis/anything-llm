@@ -22,8 +22,6 @@ const TRANSLATIONS = {
       passwordWarn:
         "Este important să salvezi această parolă deoarece nu există metodă de recuperare.",
       adminUsername: "Numele contului de administrator",
-      adminUsernameReq:
-        "Numele de utilizator trebuie să aibă cel puțin 6 caractere și să conțină numai litere mici, cifre, underscore și liniuțe fără spații.",
       adminPassword: "Parola contului de administrator",
       adminPasswordReq: "Parolele trebuie să aibă cel puțin 8 caractere.",
       teamHint:
@@ -51,16 +49,9 @@ const TRANSLATIONS = {
       skip: "Sari peste sondaj",
       thankYou: "Îți mulțumim pentru feedback!",
     },
-    workspace: {
-      title: "Creează primul tău spațiu de lucru",
-      description:
-        "Creează primul tău spațiu de lucru și începe să folosești AnythingLLM.",
-    },
   },
   common: {
     "workspaces-name": "Numele spațiilor de lucru",
-    error: "eroare",
-    success: "succes",
     user: "Utilizator",
     selection: "Selecția modelului",
     saving: "Se salvează...",
@@ -71,10 +62,11 @@ const TRANSLATIONS = {
     yes: "Da",
     no: "Nu",
     search: "Caută",
+    username_requirements:
+      "Numele de utilizator trebuie să aibă între 2 și 32 de caractere, să înceapă cu o literă mică și să conțină doar litere mici, cifre, liniuțe de subliniere, cratime și puncte.",
   },
   settings: {
     title: "Setările instanței",
-    system: "Setări generale",
     invites: "Invitații",
     users: "Utilizatori",
     workspaces: "Spații de lucru",
@@ -91,7 +83,6 @@ const TRANSLATIONS = {
     "voice-speech": "Voce & Vorbire",
     "vector-database": "Baza de date vectorială",
     embeds: "Chat Embed",
-    "embed-chats": "Istoricul chat embed",
     security: "Securitate",
     "event-logs": "Jurnale de evenimente",
     privacy: "Confidențialitate & Date",
@@ -103,6 +94,13 @@ const TRANSLATIONS = {
     "experimental-features": "Funcții experimentale",
     contact: "Contact suport",
     "browser-extension": "Extensie browser",
+    "mobile-app": "AnythingLLM Mobile",
+    "community-hub": {
+      title: "Centru comunitar",
+      trending: "Descoperă tendințele",
+      "your-account": "Contul dumneavoastră",
+      "import-item": "Importați articolul",
+    },
   },
   login: {
     "multi-user": {
@@ -114,103 +112,22 @@ const TRANSLATIONS = {
       "forgot-pass": "Ai uitat parola",
       reset: "Resetează",
     },
-    "sign-in": {
-      start: "Autentifică-te în",
-      end: "cont.",
-    },
+    "sign-in": "Autentifică-te în {{appName}} cont.",
     "password-reset": {
       title: "Resetare parolă",
       description:
         "Introdu informațiile necesare mai jos pentru a reseta parola.",
       "recovery-codes": "Coduri de recuperare",
-      "recovery-code": "Cod de recuperare {{index}}",
       "back-to-login": "Înapoi la autentificare",
     },
   },
   "main-page": {
-    noWorkspaceError:
-      "Te rugăm să creezi un spațiu de lucru înainte să începi o conversație.",
-    checklist: {
-      title: "Început rapid",
-      tasksLeft: "sarcini rămase",
-      completed: "Ești pe drumul să devii expert AnythingLLM!",
-      dismiss: "închide",
-      tasks: {
-        create_workspace: {
-          title: "Creează un spațiu de lucru",
-          description: "Creează primul tău spațiu de lucru pentru a începe",
-          action: "Creează",
-        },
-        send_chat: {
-          title: "Trimite un chat",
-          description: "Începe o conversație cu asistentul AI",
-          action: "Chat",
-        },
-        embed_document: {
-          title: "Inserați un document",
-          description: "Adaugă primul tău document în spațiul de lucru",
-          action: "Include",
-        },
-        setup_system_prompt: {
-          title: "Configurează un sistem prompt",
-          description: "Configurează comportamentul asistentului AI",
-          action: "Configurează",
-        },
-        define_slash_command: {
-          title: "Definește o comandă slash",
-          description: "Creează comenzi personalizate pentru asistent",
-          action: "Definește",
-        },
-        visit_community: {
-          title: "Vizitează Comunitatea",
-          description: "Explorează resursele și șabloanele comunității",
-          action: "Răsfoiește",
-        },
-      },
+    quickActions: {
+      createAgent: "Creați un agent",
+      editWorkspace: "Modifică spațiul de lucru",
+      uploadDocument: "Încărcați un document",
     },
-    quickLinks: {
-      title: "Link-uri rapide",
-      sendChat: "Trimite Chat",
-      embedDocument: "Include Document",
-      createWorkspace: "Creează Spațiu de lucru",
-    },
-    exploreMore: {
-      title: "Explorează mai multe funcții",
-      features: {
-        customAgents: {
-          title: "Agenți AI personalizați",
-          description:
-            "Construiește agenți AI puternici și automatizări fără cod.",
-          primaryAction: "Chatează cu @agent",
-          secondaryAction: "Construiește un flux agent",
-        },
-        slashCommands: {
-          title: "Comenzi Slash",
-          description:
-            "Economisește timp și folosește prompturi cu comenzi personalizate.",
-          primaryAction: "Creează o comandă slash",
-          secondaryAction: "Explorează pe Hub",
-        },
-        systemPrompts: {
-          title: "System Prompts",
-          description:
-            "Modifică system prompt pentru a personaliza răspunsurile AI ale unui spațiu de lucru.",
-          primaryAction: "Modifică un prompt system",
-          secondaryAction: "Gestionează variabilele promptului",
-        },
-      },
-    },
-    announcements: {
-      title: "Actualizări & Anunțuri",
-    },
-    resources: {
-      title: "Resurse",
-      links: {
-        docs: "Documentație",
-        star: "Stea pe Github",
-      },
-      keyboardShortcuts: "Scurtături de tastatură",
-    },
+    greeting: "Cu ce vă pot ajuta astăzi?",
   },
   "new-workspace": {
     title: "Spațiu de lucru nou",
@@ -241,13 +158,6 @@ const TRANSLATIONS = {
       heading: "Explică-mi",
       body: "beneficiile AnythingLLM",
     },
-    pfp: {
-      title: "Imagine profil asistent",
-      description:
-        "Personalizează imaginea de profil a asistentului pentru acest spațiu de lucru.",
-      image: "Imagine spațiu de lucru",
-      remove: "Șterge imaginea spațiului de lucru",
-    },
     delete: {
       title: "Șterge spațiul de lucru",
       description:
@@ -270,7 +180,6 @@ const TRANSLATIONS = {
       title: "Modelul de chat al spațiului de lucru",
       description:
         "Modelul specific chat folosit de acest spațiu de lucru. Dacă e lăsat gol, folosește preferința LLM a sistemului.",
-      wait: "-- așteptare modele --",
     },
     mode: {
       title: "Mod chat",
@@ -380,17 +289,12 @@ const TRANSLATIONS = {
     title: "Confidențialitate & Gestionarea datelor",
     description:
       "Aceasta este configurația ta pentru modul în care furnizorii terți conectați și AnythingLLM gestionează datele tale.",
-    llm: "Selecția LLM",
-    embedding: "Preferința embedding",
-    vector: "Baza de date vectorială",
     anonymous: "Telemetrie anonimă activată",
   },
   connectors: {
     "search-placeholder": "Caută conectori de date",
     "no-connectors": "Nu au fost găsiți conectori de date.",
     obsidian: {
-      name: "Obsidian",
-      description: "Importă un vault Obsidian cu un singur click.",
       vault_location: "Locația vault-ului",
       vault_description:
         "Selectează folderul vault-ului Obsidian pentru a importa toate notițele și conexiunile lor.",
@@ -440,7 +344,6 @@ const TRANSLATIONS = {
         "URL-ul repository-ului GitLab pe care dorești să îl colectezi.",
       token: "Token de acces GitLab",
       optional: "opțional",
-      token_explained: "Token de acces pentru a preveni limitările de rată.",
       token_description:
         "Selectează entitățile suplimentare de preluat din API-ul GitLab.",
       token_explained_start: "Fără un ",
@@ -473,10 +376,6 @@ const TRANSLATIONS = {
       URL_explained_end: " disponibile.",
       task_explained:
         "Odată complet, transcrierea va fi disponibilă pentru embedding în spații de lucru în selectorul de documente.",
-      language: "Limba transcrierii",
-      language_explained:
-        "Selectează limba transcrierii pe care dorești să o colectezi.",
-      loading_languages: "-- încărcare limbi disponibile --",
     },
     "website-depth": {
       name: "Bulk Link Scraper",
@@ -520,8 +419,9 @@ const TRANSLATIONS = {
       pat_token_explained: "Token-ul tău personal de acces Confluence.",
       task_explained:
         "Odată complet, conținutul paginii va fi disponibil pentru embedding în spații de lucru în selectorul de documente.",
-      bypass_ssl: null,
-      bypass_ssl_explained: null,
+      bypass_ssl: "Ocolirea validării certificatului SSL",
+      bypass_ssl_explained:
+        "Activați această opțiune pentru a ocoli validarea certificatului SSL pentru instanțele Confluence găzduite de utilizator, cu un certificat semnat de utilizator.",
     },
     manage: {
       documents: "Documente",
@@ -537,14 +437,11 @@ const TRANSLATIONS = {
       "search-document": "Căută document",
       "no-documents": "Niciun document",
       "move-workspace": "Mută în spațiul de lucru",
-      name: "Nume",
       "delete-confirmation":
         "Ești sigur că vrei să ștergi aceste fișiere și foldere?\nAcest lucru va elimina fișierele din sistem și le va elimina automat din orice spațiu de lucru existent.\nAceastă acțiune este ireversibilă.",
       "removing-message":
         "Se elimină {{count}} documente și {{folderCount}} foldere. Te rugăm să aștepți.",
       "move-success": "S-au mutat cu succes {{count}} documente.",
-      date: "Dată",
-      type: "Tip",
       no_docs: "Niciun document",
       select_all: "Selectează tot",
       deselect_all: "Deselectează tot",
@@ -590,18 +487,10 @@ const TRANSLATIONS = {
     },
   },
   chat_window: {
-    welcome: "Bine ai venit în noul tău spațiu de lucru.",
-    get_started: "Pentru a începe, fie",
-    get_started_default: "Pentru a începe",
-    upload: "încarcă un document",
-    or: "sau",
     attachments_processing:
       "Fișierele atașate se procesează. Te rugăm să aștepți...",
-    send_chat: "trimite un chat.",
     send_message: "Trimite mesaj",
     attach_file: "Atașează un fișier la acest chat",
-    slash: "Vizualizează toate comenzile slash disponibile pentru chat.",
-    agents: "Vezi toți agenții disponibili pentru chat.",
     text_size: "Schimbă dimensiunea textului.",
     microphone: "Vorbește promptul tău.",
     send: "Trimite prompt către spațiul de lucru",
@@ -611,20 +500,11 @@ const TRANSLATIONS = {
     regenerate_response: "Regenerare răspuns",
     good_response: "Răspuns bun",
     more_actions: "Mai multe acțiuni",
-    hide_citations: "Ascunde citările",
-    show_citations: "Arată citările",
-    pause_tts_speech_message: "Pauză rostire mesaj TTS",
     fork: "Fork",
     delete: "Șterge",
-    save_submit: "Salvează & Trimite",
     cancel: "Anulează",
     edit_prompt: "Editează prompt",
     edit_response: "Editează răspuns",
-    at_agent: "@agent",
-    default_agent_description:
-      " - agentul implicit pentru acest spațiu de lucru.",
-    custom_agents_coming_soon: "agenții personalizați vin în curând!",
-    slash_reset: "/reset",
     preset_reset_description:
       "Șterge istoricul chatului și începe o conversație nouă",
     add_new_preset: " Adaugă preset nou",
@@ -649,14 +529,43 @@ const TRANSLATIONS = {
       missing_credentials: "Acest furnizor lipsește credențiale!",
       missing_credentials_description: "Click pentru a configura credențialele",
     },
+    submit: "Trimite",
+    edit_info_user:
+      "„Trimite” recreează răspunsul generat de inteligența artificială. „Salvează” actualizează doar mesajul dumneavoastră.",
+    edit_info_assistant:
+      "Modificările pe care le faceți vor fi salvate direct în acest răspuns.",
+    see_less: "Vezi mai puțin",
+    see_more: "Vezi mai multe",
+    tools: "Unelte",
+    browse: "Navigați",
+    text_size_label: "Dimensiunea textului",
+    select_model: "Selectați modelul",
+    sources: "Surse",
+    document: "Document",
+    similarity_match: "meci",
+    source_count_one: "{{count}} – referință",
+    source_count_other: "Referințe către {{count}}",
+    preset_exit_description: "Întrerupeți sesiunea actuală a agentului",
+    add_new: "Adaugă",
+    edit: "Editează",
+    publish: "Publica",
+    stop_generating: "Opriți generarea răspunsului",
+    pause_tts_speech_message:
+      "Pauză în redarea vocii prin Text-to-Speech (TTS) a mesajului.",
+    slash_commands: "Comenzi scurte",
+    agent_skills: "Abilități ale agentului",
+    manage_agent_skills: "Gestionarea competențelor agenților",
+    agent_skills_disabled_in_session:
+      "Nu este posibil să modificați abilitățile în timpul unei sesiuni cu un agent activ. Pentru a încheia sesiunea, utilizați comanda /exit.",
+    start_agent_session: "Începe sesiunea de agent",
+    use_agent_session_to_use_tools:
+      'Puteți utiliza instrumentele disponibile în chat, inițiind o sesiune cu un agent, începând mesajul cu "@agent".',
   },
   profile_settings: {
     edit_account: "Editează contul",
     profile_picture: "Poză profil",
     remove_profile_picture: "Șterge poza profil",
     username: "Nume utilizator",
-    username_description:
-      "Numele de utilizator trebuie să conțină doar litere mici, cifre, underscore și liniuțe fără spații",
     new_password: "Parolă nouă",
     password_description: "Parola trebuie să aibă cel puțin 8 caractere",
     cancel: "Anulează",
@@ -698,7 +607,7 @@ const TRANSLATIONS = {
         name_label: "Nume",
         name_description:
           "Acesta este numele afișat al System Prompt-ului tău.",
-        name_placeholder: "",
+        name_placeholder: "Asistentul meu",
         description_label: "Descriere",
         description_description: "Descrie scopul System Prompt-ului tău.",
         tags_label: "Etichete",
@@ -710,15 +619,12 @@ const TRANSLATIONS = {
         private_description: "Prompturile private sunt vizibile doar ție.",
         publish_button: "Publică pe Community Hub",
         submitting: "Se publică...",
-        submit: "Publică pe Community Hub",
         prompt_label: "Prompt",
         prompt_description:
           "Acesta este promptul efectiv folosit pentru a ghida LLM-ul.",
         prompt_placeholder: "Introdu System Prompt-ul aici...",
       },
       agent_flow: {
-        public_description: "Fluxurile agent publice sunt vizibile tuturor.",
-        private_description: "Fluxurile agent private sunt vizibile doar ție.",
         success_title: "Succes!",
         success_description:
           "Fluxul agentului tău a fost publicat în Comunitate!",
@@ -735,7 +641,6 @@ const TRANSLATIONS = {
           "Etichetele ajută la găsirea fluxului agent. Max 5 etichete, max 20 caractere fiecare.",
         tags_placeholder: "Tastează și apasă Enter pentru a adăuga etichete",
         visibility_label: "Vizibilitate",
-        publish_button: "Publică pe Community Hub",
         submitting: "Se publică...",
         submit: "Publică pe Community Hub",
         privacy_note:
@@ -752,10 +657,6 @@ const TRANSLATIONS = {
         name_placeholder: "Comanda mea slash",
         description_label: "Descriere",
         description_description: "Descrie scopul comenzii tale slash.",
-        command_label: "Comandă",
-        command_description:
-          "Aceasta este comanda slash pe care utilizatorii o vor scrie pentru a o activa.",
-        command_placeholder: "comanda-mea",
         tags_label: "Etichete",
         tags_description:
           "Etichetele ajută la găsirea comenzii. Max 5 etichete, max 20 caractere fiecare.",
@@ -827,9 +728,6 @@ const TRANSLATIONS = {
       wait: "-- se așteaptă modele --",
     },
     skill: {
-      title: "Abilități implicite ale agentului",
-      description:
-        "Îmbunătățește abilitățile naturale ale agentului implicit cu aceste abilități predefinite. Această configurație se aplică tuturor spațiilor de lucru.",
       rag: {
         title: "RAG & memorie pe termen lung",
         description:
@@ -857,11 +755,16 @@ const TRANSLATIONS = {
       },
       web: {
         title: "Căutare și navigare web live",
-        "desc-start":
-          "Permite-i agentului tău să caute pe web pentru a-ți răspunde la întrebări prin conectarea la un furnizor de căutare web (SERP).",
-        "desc-end":
-          "Căutarea web în timpul sesiunilor agentului nu va funcționa până nu este configurată.",
+        description:
+          "Permite-i agentului tău să caute pe internet pentru a răspunde la întrebările tale, conectându-l la un furnizor de servicii de căutare web (SERP).",
       },
+      sql: {
+        title: "Conector SQL",
+        description:
+          "Permite-ți agentului să utilizeze SQL pentru a răspunde la întrebările tale, conectându-se la diverși furnizori de baze de date SQL.",
+      },
+      default_skill:
+        "Implicit, această funcție este activată, dar puteți dezactiva-o dacă nu doriți ca agentul să o utilizeze.",
     },
   },
   recorded: {
@@ -926,11 +829,6 @@ const TRANSLATIONS = {
         description:
           "Setează un nume care este afișat pe pagina de autentificare tuturor utilizatorilor.",
       },
-      "chat-message-alignment": {
-        title: "Alinierea mesajelor de chat",
-        description:
-          "Selectează modul de aliniere a mesajelor când folosești interfața de chat.",
-      },
       "display-language": {
         title: "Limba de afișare",
         description:
@@ -980,8 +878,9 @@ const TRANSLATIONS = {
         link: "Link",
       },
       "render-html": {
-        title: null,
-        description: null,
+        title: "Redarea HTML în chat",
+        description:
+          "Afișarea răspunsurilor HTML în răspunsurile asistentului.\nAcest lucru poate duce la o calitate a răspunsurilor mult mai bună, dar poate și la riscuri potențiale de securitate.",
       },
     },
   },
@@ -1011,7 +910,8 @@ const TRANSLATIONS = {
         model_type: "Tip model",
         default: "Implicit",
         reasoning: "Raționament",
-        model_type_tooltip: null,
+        model_type_tooltip:
+          "Dacă implementarea dvs. utilizează un model de raționament (o1, o1-mini, o3-mini, etc.), setați această opțiune la „Raționament”. În caz contrar, cererile dvs. de chat pot eșua.",
       },
     },
   },

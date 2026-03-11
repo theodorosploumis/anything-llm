@@ -22,8 +22,6 @@ const TRANSLATIONS = {
       passwordWarn:
         "Dieses Passwort sollte sicher aufbewahrt werden, da Wiederherstellung nicht möglich ist.",
       adminUsername: "Benutzername des Admin-Accounts",
-      adminUsernameReq:
-        "Der Benutzername muss aus mindestens 6 Zeichen bestehen und darf ausschließlich Kleinbuchstaben, Ziffern, Unter- und Bindestriche enthalten – keine Leerzeichen",
       adminPassword: "Passwort des Admin-Accounts",
       adminPasswordReq: "Das Passwort muss mindestens 8 Zeichen enthalten.",
       teamHint:
@@ -51,16 +49,9 @@ const TRANSLATIONS = {
       skip: "Umfrage überspringen",
       thankYou: "Vielen Dank für Ihr Feedback!",
     },
-    workspace: {
-      title: "Ersten Workspace erstellen",
-      description:
-        "Erstellen Sie Ihren ersten Workspace und starten Sie AnythingLLM.",
-    },
   },
   common: {
     "workspaces-name": "Namen der Workspaces",
-    error: "Fehler",
-    success: "Erfolg",
     user: "Benutzer",
     selection: "Modellauswahl",
     saving: "Speichern...",
@@ -70,11 +61,12 @@ const TRANSLATIONS = {
     optional: "Optional",
     yes: "Ja",
     no: "Nein",
-    search: null,
+    search: "Suchen",
+    username_requirements:
+      "Der Benutzername muss 2-32 Zeichen lang sein, mit einem Kleinbuchstaben beginnen und darf nur Kleinbuchstaben, Zahlen, Unterstriche, Bindestriche und Punkte enthalten.",
   },
   settings: {
     title: "Instanzeinstellungen",
-    system: "Allgemeine Einstellungen",
     invites: "Einladungen",
     users: "Benutzer",
     workspaces: "Workspaces",
@@ -91,7 +83,6 @@ const TRANSLATIONS = {
     "voice-speech": "Sprache & Sprachausgabe",
     "vector-database": "Vektordatenbank",
     embeds: "Chat-Einbettung",
-    "embed-chats": "Chat-Einbettungsverlauf",
     security: "Sicherheit",
     "event-logs": "Ereignisprotokolle",
     privacy: "Datenschutz & Datenverarbeitung",
@@ -103,6 +94,13 @@ const TRANSLATIONS = {
     contact: "Support kontaktieren",
     "browser-extension": "Browser-Extension",
     "system-prompt-variables": "Systempromptvariablen",
+    "mobile-app": "AnythingLLM Mobile",
+    "community-hub": {
+      title: "Gemeindezentrum",
+      trending: "Entdecken Sie die aktuell beliebtesten Themen",
+      "your-account": "Ihr Konto",
+      "import-item": "Artikel importieren",
+    },
   },
   login: {
     "multi-user": {
@@ -114,104 +112,22 @@ const TRANSLATIONS = {
       "forgot-pass": "Passwort vergessen",
       reset: "Zurücksetzen",
     },
-    "sign-in": {
-      start: "Melden Sie sich bei Ihrem",
-      end: "Konto an.",
-    },
+    "sign-in": "Melden Sie sich bei Ihrem {{appName}} Konto an.",
     "password-reset": {
       title: "Passwort zurücksetzen",
       description:
         "Geben Sie die erforderlichen Informationen unten ein, um Ihr Passwort zurückzusetzen.",
       "recovery-codes": "Wiederherstellungscodes",
-      "recovery-code": "Wiederherstellungscode {{index}}",
       "back-to-login": "Zurück zur Anmeldung",
     },
   },
   "main-page": {
-    noWorkspaceError:
-      "Bitte erstellen Sie einen Workspace, bevor Sie einen Chat beginnen.",
-    checklist: {
-      title: "Erste Schritte",
-      tasksLeft: "Aufgaben übrig",
-      completed: "Sie sind auf dem Weg, ein AnythingLLM-Experte zu werden!",
-      dismiss: "schließen",
-      tasks: {
-        create_workspace: {
-          title: "Einen Workspace erstellen",
-          description: "Erstellen Sie Ihren ersten Workspace, um zu beginnen",
-          action: "Erstellen",
-        },
-        send_chat: {
-          title: "Einen Chat senden",
-          description: "Starten Sie ein Gespräch mit Ihrem KI-Assistenten",
-          action: "Chat",
-        },
-        embed_document: {
-          title: "Ein Dokument einbetten",
-          description: "Fügen Sie Ihr erstes Dokument zu Ihrem Workspace hinzu",
-          action: "Einbetten",
-        },
-        setup_system_prompt: {
-          title: "Ein System-Prompt einrichten",
-          description: "Konfigurieren Sie das Verhalten Ihres KI-Assistenten",
-          action: "Einrichten",
-        },
-        define_slash_command: {
-          title: "Einen Slash-Befehl definieren",
-          description:
-            "Erstellen Sie benutzerdefinierte Befehle für Ihren Assistenten",
-          action: "Definieren",
-        },
-        visit_community: {
-          title: "Community Hub besuchen",
-          description: "Entdecken Sie Community-Ressourcen und Vorlagen",
-          action: "Stöbern",
-        },
-      },
+    quickActions: {
+      createAgent: "Erstelle einen Agenten",
+      editWorkspace: "Arbeitsbereich bearbeiten",
+      uploadDocument: "Ein Dokument hochladen",
     },
-    quickLinks: {
-      title: "Schnellzugriffe",
-      sendChat: "Chat senden",
-      embedDocument: "Dokument einbetten",
-      createWorkspace: "Workspace erstellen",
-    },
-    exploreMore: {
-      title: "Weitere Funktionen erkunden",
-      features: {
-        customAgents: {
-          title: "Benutzerdefinierte KI-Agenten",
-          description:
-            "Erstellen Sie leistungsstarke KI-Agenten und Automatisierungen ohne Code.",
-          primaryAction: "Chatten mit @agent",
-          secondaryAction: "Einen Agenten-Flow erstellen",
-        },
-        slashCommands: {
-          title: "Slash-Befehle",
-          description:
-            "Sparen Sie Zeit und fügen Sie Eingabeaufforderungen mit benutzerdefinierten Slash-Befehlen ein.",
-          primaryAction: "Einen Slash-Befehl erstellen",
-          secondaryAction: "Im Hub erkunden",
-        },
-        systemPrompts: {
-          title: "System-Prompts",
-          description:
-            "Ändern Sie die System-Eingabeaufforderung, um die KI-Antworten eines Workspaces anzupassen.",
-          primaryAction: "Eine System-Eingabeaufforderung ändern",
-          secondaryAction: "Eingabevariablen verwalten",
-        },
-      },
-    },
-    announcements: {
-      title: "Updates & Ankündigungen",
-    },
-    resources: {
-      title: "Ressourcen",
-      links: {
-        docs: "Dokumentation",
-        star: "Auf Github mit Stern versehen",
-      },
-      keyboardShortcuts: "Tastaturkürzel",
-    },
+    greeting: "Wie kann ich Ihnen heute helfen?",
   },
   "new-workspace": {
     title: "Neuer Workspace",
@@ -241,13 +157,6 @@ const TRANSLATIONS = {
       heading: "Erkläre mir",
       body: "die Vorteile von AnythingLLM",
     },
-    pfp: {
-      title: "Assistent-Profilbild",
-      description:
-        "Passen Sie das Profilbild des Assistenten für diesen Workspace an.",
-      image: "Workspace-Bild",
-      remove: "Workspace-Bild entfernen",
-    },
     delete: {
       title: "Workspace löschen",
       description:
@@ -270,7 +179,6 @@ const TRANSLATIONS = {
       title: "Workspace-Chat-Modell",
       description:
         "Das spezifische Chat-Modell, das für diesen Workspace verwendet wird. Wenn leer, wird die System-LLM-Präferenz verwendet.",
-      wait: "-- warte auf Modelle --",
     },
     mode: {
       title: "Chat-Modus",
@@ -318,8 +226,9 @@ const TRANSLATIONS = {
       query: "Abfrage",
       "desc-end":
         "modus, möchten Sie vielleicht eine benutzerdefinierte Ablehnungsantwort zurückgeben, wenn kein Kontext gefunden wird.",
-      "tooltip-title": null,
-      "tooltip-description": null,
+      "tooltip-title": "Warum sehe ich das?",
+      "tooltip-description":
+        "Sie befinden sich im Abfragemodus, der nur Informationen aus Ihren Dokumenten verwendet. Wechseln Sie in den Chat-Modus für flexiblere Gespräche oder klicken Sie hier, um unsere Dokumentation zu besuchen und mehr über Chat-Modi zu erfahren.",
     },
     temperature: {
       title: "LLM-Temperatur",
@@ -374,9 +283,6 @@ const TRANSLATIONS = {
       wait: "-- warte auf Modelle --",
     },
     skill: {
-      title: "Standard-Agentenfähigkeiten",
-      description:
-        "Verbessern Sie die natürlichen Fähigkeiten des Standard-Agenten mit diesen vorgefertigten Fähigkeiten. Diese Einrichtung gilt für alle Workspaces.",
       rag: {
         title: "RAG & Langzeitgedächtnis",
         description:
@@ -404,13 +310,19 @@ const TRANSLATIONS = {
       },
       web: {
         title: "Live-Websuche und -Browsing",
-        "desc-start":
-          "Ermöglichen Sie Ihrem Agenten, das Web zu durchsuchen, um Ihre Fragen zu beantworten, indem Sie eine Verbindung zu einem Websuche-Anbieter (SERP) herstellen.",
-        "desc-end":
-          "Die Websuche während Agentensitzungen funktioniert erst, wenn dies eingerichtet ist.",
+        description:
+          "Ermöglichen Sie Ihrem Agenten, das Internet zu durchsuchen, um Ihre Fragen zu beantworten, indem Sie eine Verbindung zu einem Anbieter von Web-Suchdiensten (SERP) herstellen.",
       },
+      sql: {
+        title: "SQL-Verbindung",
+        description:
+          "Ermöglichen Sie Ihrem Agenten, SQL zu nutzen, um Ihre Fragen zu beantworten, indem Sie eine Verbindung zu verschiedenen SQL-Datenbankanbietern herstellen.",
+      },
+      default_skill:
+        "Standardmäßig ist diese Funktion aktiviert, aber Sie können sie deaktivieren, wenn Sie nicht möchten, dass sie für den Agenten verfügbar ist.",
     },
-    "performance-warning": null,
+    "performance-warning":
+      "Die Leistung von LLMs, die keine explizite Unterstützung für das Aufrufen von Tools bieten, hängt stark von den Fähigkeiten und der Genauigkeit des Modells ab. Einige Fähigkeiten können eingeschränkt oder nicht funktionsfähig sein.",
   },
   recorded: {
     title: "Workspace-Chats",
@@ -473,11 +385,6 @@ const TRANSLATIONS = {
         description:
           "Geben Sie einen Anwendungsnamen ein, der auf der Login-Seite erscheint.",
       },
-      "chat-message-alignment": {
-        title: "Nachrichtenanordnung im Chat",
-        description:
-          "Bestimmen Sie den Ausrichtungsmodus der Chat-Nachrichten.",
-      },
       "display-language": {
         title: "Sprache",
         description:
@@ -526,8 +433,9 @@ const TRANSLATIONS = {
         link: "Link",
       },
       "render-html": {
-        title: null,
-        description: null,
+        title: "HTML-Code in einem Chat anzeigen",
+        description:
+          "HTML-Antworten in den Antworten des Assistenten anzeigen.\nDies kann zu einer viel höheren Qualität der Antwort führen, aber auch zu potenziellen Sicherheitsrisiken führen.",
       },
     },
   },
@@ -557,7 +465,8 @@ const TRANSLATIONS = {
         model_type: "Art des Modells",
         default: "Standard",
         reasoning: "Reasoning",
-        model_type_tooltip: null,
+        model_type_tooltip:
+          'Wenn Ihre Bereitstellung ein Reasoning-Modell verwendet (z. B. o1, o1-mini, o3-mini usw.), setzen Sie dies auf "Reasoning". Andernfalls können Ihre Chat-Anfragen fehlschlagen.',
       },
     },
   },
@@ -650,17 +559,12 @@ const TRANSLATIONS = {
     title: "Datenschutz & Datenverarbeitung",
     description:
       "Dies ist Ihre Konfiguration dafür, wie verbundene Drittanbieter und AnythingLLM Ihre Daten behandeln.",
-    llm: "LLM-Auswahl",
-    embedding: "Einbettungspräferenz",
-    vector: "Vektordatenbank",
     anonymous: "Anonyme Telemetrie aktiviert",
   },
   connectors: {
     "search-placeholder": "Datenverbindungen durchsuchen",
     "no-connectors": "Keine Datenverbindungen gefunden.",
     obsidian: {
-      name: "Obsidian",
-      description: "Mit einem Klick Obsidian-Vault importieren.",
       vault_location: "Ort des Vaults",
       vault_description:
         "Ordner des Obsidian-Vaults auswählen, um sämtliche Notizen inkl. Verknüpfungen zu importieren.",
@@ -707,7 +611,6 @@ const TRANSLATIONS = {
       URL_explained: "URL des GitLab-Repositories, das Sie sammeln möchten.",
       token: "GitLab Zugriffstoken",
       optional: "optional",
-      token_explained: "Zugriffstoken zur Vermeidung von Ratenlimits.",
       token_description:
         "Wählen Sie zusätzliche Entitäten aus, die von der GitLab-API abgerufen werden sollen.",
       token_explained_start: "Ohne einen ",
@@ -741,10 +644,6 @@ const TRANSLATIONS = {
       URL_explained_end: " verfügen.",
       task_explained:
         "Sobald der Vorgang abgeschlossen ist, ist das Transkript im Dokumenten-Picker zur Einbettung in Workspaces verfügbar.",
-      language: "Transkriptsprache",
-      language_explained:
-        "Wählen Sie die Sprache des Transkripts aus, das Sie sammeln möchten.",
-      loading_languages: "-- lade verfügbare Sprachen --",
     },
     "website-depth": {
       name: "Massen-Link-Scraper",
@@ -789,8 +688,9 @@ const TRANSLATIONS = {
       pat_token_explained: "Ihr Confluence persönliches Zugriffstoken.",
       task_explained:
         "Sobald der Vorgang abgeschlossen ist, ist der Seiteninhalt im Dokumenten-Picker zur Einbettung in Workspaces verfügbar.",
-      bypass_ssl: null,
-      bypass_ssl_explained: null,
+      bypass_ssl: "SSL-Zertifikatsvalidierung umgehen",
+      bypass_ssl_explained:
+        "Aktivieren Sie diese Option, um die SSL-Zertifikatsvalidierung für selbst gehostete Confluence-Instanzen mit selbstsignierten Zertifikaten zu umgehen.",
     },
     manage: {
       documents: "Dokumente",
@@ -806,14 +706,11 @@ const TRANSLATIONS = {
       "search-document": "Dokument suchen",
       "no-documents": "Keine Dokumente",
       "move-workspace": "In Workspace verschieben",
-      name: "Name",
       "delete-confirmation":
         "Sind Sie sicher, dass Sie diese Dateien und Ordner löschen möchten?\nDies wird die Dateien vom System entfernen und sie automatisch aus allen vorhandenen Workspaces entfernen.\nDiese Aktion kann nicht rückgängig gemacht werden.",
       "removing-message":
         "Entferne {{count}} Dokumente und {{folderCount}} Ordner. Bitte warten.",
       "move-success": "{{count}} Dokumente erfolgreich verschoben.",
-      date: "Datum",
-      type: "Typ",
       select_all: "Alle auswählen",
       deselect_all: "Auswahl abbrechen",
       no_docs: "Keine Dokumente vorhanden.",
@@ -860,17 +757,9 @@ const TRANSLATIONS = {
     },
   },
   chat_window: {
-    welcome: "Willkommen zu deinem Workspace.",
-    get_started: "Starte mit ",
-    get_started_default: "Starte mit ",
-    upload: "dem Upload von Dokumenten",
-    or: " oder ",
     attachments_processing: "Anhänge werden verarbeitet. Bitte warten...",
-    send_chat: " schreibe im Chat.",
     send_message: "Schreibe eine Nachricht",
     attach_file: "Füge eine Datei zum Chat hinzu",
-    slash: "Schau dir alle verfügbaren Slash Befehle für den Chat an.",
-    agents: "Schau dir alle verfugbaren Agentenfähigkeiten für den Chat an.",
     text_size: "Ändere die Größe des Textes.",
     microphone: "Spreche deinen Prompt ein.",
     send: "Versende den Prompt an den Workspace.",
@@ -880,19 +769,11 @@ const TRANSLATIONS = {
     regenerate_response: "Antwort neu generieren",
     good_response: "Gute Antwort",
     more_actions: "Weitere Aktionen",
-    hide_citations: "Quellenangaben ausblenden",
-    show_citations: "Quellenangaben anzeigen",
-    pause_tts_speech_message: "Nachrichtenvorlesung pausieren",
     fork: "Abzweigen",
     delete: "Löschen",
-    save_submit: "Speichern und Senden",
     cancel: "Abbrechen",
     edit_prompt: "Prompt bearbeiten",
     edit_response: "Antwort bearbeiten",
-    at_agent: "@agent",
-    default_agent_description: "– Standardagent für diesen Workspace.",
-    custom_agents_coming_soon: "Eigene Agenten bald verfügbar!",
-    slash_reset: "/reset",
     preset_reset_description: "Chatverlauf löschen und neuen Chat starten",
     add_new_preset: "Neues Preset anlegen",
     command: "Befehl",
@@ -915,14 +796,42 @@ const TRANSLATIONS = {
       missing_credentials: "Für diesen Anbieter fehlen Anmeldedaten!",
       missing_credentials_description: "Klicken, um Zugangsdaten einzurichten",
     },
+    submit: "Absenden",
+    edit_info_user:
+      '"Absenden" generiert die Antwort des KI-Systems neu. "Speichern" aktualisiert lediglich Ihre Nachricht.',
+    edit_info_assistant:
+      "Ihre Änderungen werden direkt in diese Antwort gespeichert.",
+    see_less: "Weniger anzeigen",
+    see_more: "Mehr anzeigen",
+    tools: "Werkzeuge",
+    browse: "Durchsuchen",
+    text_size_label: "Schriftgröße",
+    select_model: "Modell auswählen",
+    sources: "Quellen",
+    document: "Dokument",
+    similarity_match: "Spiel",
+    source_count_one: "{{count}} Referenz",
+    source_count_other: "{{count}} Verweise",
+    preset_exit_description: "Behalte die aktuelle Agentensitzung",
+    add_new: "Neu hinzufügen",
+    edit: "Bearbeiten",
+    publish: "Veröffentlichen",
+    stop_generating: "Stoppen Sie die Generierung von Antworten",
+    pause_tts_speech_message: "Pause die Text-to-Speech-Funktion der Nachricht",
+    slash_commands: "Befehlszeilen",
+    agent_skills: "Fähigkeiten von Agenten",
+    manage_agent_skills: "Verwalten Sie die Fähigkeiten von Agenten",
+    agent_skills_disabled_in_session:
+      "Es ist nicht möglich, während einer aktiven Sitzung die Fähigkeiten zu ändern. Verwenden Sie zuerst den Befehl `/exit`, um die Sitzung zu beenden.",
+    start_agent_session: "Starte eine Agent-Sitzung",
+    use_agent_session_to_use_tools:
+      'Sie können Tools im Chat nutzen, indem Sie eine Agentensitzung mit "@agent" am Anfang Ihrer Anfrage starten.',
   },
   profile_settings: {
     edit_account: "Account bearbeiten",
     profile_picture: "Profilbild",
     remove_profile_picture: "Profilbild entfernen",
     username: "Nutzername",
-    username_description:
-      "Der Nutzername darf nur kleine Buchstaben, Zahlen, Unterstriche und Bindestriche ohne Leerzeichen enthalten.",
     new_password: "Neues Passwort",
     password_description: "Das Passwort muss mindestens 8 Zeichen haben.",
     cancel: "Abbrechen",
@@ -955,83 +864,96 @@ const TRANSLATIONS = {
   community_hub: {
     publish: {
       system_prompt: {
-        success_title: null,
-        success_description: null,
-        success_thank_you: null,
-        view_on_hub: null,
-        modal_title: null,
-        name_label: null,
-        name_description: null,
-        name_placeholder: null,
-        description_label: null,
-        description_description: null,
-        tags_label: null,
-        tags_description: null,
-        tags_placeholder: null,
-        visibility_label: null,
-        public_description: null,
-        private_description: null,
-        publish_button: null,
-        submitting: null,
-        submit: null,
-        prompt_label: null,
-        prompt_description: null,
-        prompt_placeholder: null,
+        success_title: "Erfolg!",
+        success_description:
+          "Ihre System-Anweisung wurde im Community Hub veröffentlicht!",
+        success_thank_you: "Vielen Dank für die Weitergabe an die Community!",
+        view_on_hub: "Ansicht im Community Hub",
+        modal_title:
+          "Veröffentlichen Sie das System, um die Benutzer zu informieren, dass das System nicht mehr verfügbar ist.",
+        name_label: "Name",
+        visibility_label: "Sichtbarkeit",
+        public_description: "Öffentliche Anweisungen sind für alle sichtbar.",
+        private_description:
+          "Private System-Nachrichten sind nur für Sie sichtbar.",
+        publish_button: "Veröffentlichen Sie im Community Hub",
+        submitting: "Veröffentlichung...",
+        prompt_label: "Prompt",
+        prompt_description:
+          "Dies ist der eigentliche Systemprompt, der verwendet wird, um das LLM zu steuern.",
+        prompt_placeholder: "Bitte geben Sie Ihren Systemprompt hier ein...",
+        name_description: "Dies ist der Anzeigename für Ihren Systemprompt.",
+        name_placeholder: "Mein System-Prompt",
+        description_label: "Beschreibung",
+        description_description:
+          "Dies ist die Beschreibung Ihres System-Prompts. Verwenden Sie dies, um den Zweck Ihres System-Prompts zu beschreiben.",
+        tags_label: "Schlüsselwörter",
+        tags_description:
+          "Die Tags werden verwendet, um Ihre Systemanweisung für eine einfachere Suche zu kennzeichnen. Sie können mehrere Tags hinzufügen. Maximal 5 Tags. Maximal 20 Zeichen pro Tag.",
+        tags_placeholder:
+          "Geben Sie den Text ein und drücken Sie die Eingabetaste, um Tags hinzuzufügen.",
       },
       agent_flow: {
-        public_description: null,
-        private_description: null,
-        success_title: null,
-        success_description: null,
-        success_thank_you: null,
-        view_on_hub: null,
-        modal_title: null,
-        name_label: null,
-        name_description: null,
-        name_placeholder: null,
-        description_label: null,
-        description_description: null,
-        tags_label: null,
-        tags_description: null,
-        tags_placeholder: null,
-        visibility_label: null,
-        publish_button: null,
-        submitting: null,
-        submit: null,
-        privacy_note: null,
+        success_title: "Erfolg!",
+        success_description:
+          "Ihr Agent Flow wurde auf dem Community Hub veröffentlicht!",
+        success_thank_you: "Vielen Dank für die Weitergabe an die Community!",
+        view_on_hub: "Ansicht im Community Hub",
+        modal_title: "Veröffentlichen Sie den Agentenfluss.",
+        name_label: "Name",
+        name_description: "Dies ist der Anzeigename für Ihren Agentenablauf.",
+        name_placeholder: "Mein Agent Flow",
+        description_label: "Beschreibung",
+        description_description:
+          "Dies ist die Beschreibung Ihres Agentenflusses. Verwenden Sie diese, um den Zweck Ihres Agentenflusses zu beschreiben.",
+        tags_label: "Schlüsselwörter",
+        tags_description:
+          "Die Tags werden verwendet, um Ihren Agentenfluss leichter durchsuchbar zu machen. Sie können mehrere Tags hinzufügen. Maximal 5 Tags. Maximal 20 Zeichen pro Tag.",
+        tags_placeholder:
+          "Geben Sie Tags ein und drücken Sie die Eingabetaste, um sie hinzuzufügen.",
+        visibility_label: "Sichtbarkeit",
+        submitting: "Veröffentlichung...",
+        submit: "Veröffentlichen Sie im Community Hub",
+        privacy_note:
+          "Agent-Prozesse werden immer privat hochgeladen, um sensible Daten zu schützen. Sie können die Sichtbarkeit im Community Hub nach der Veröffentlichung ändern. Bitte überprüfen Sie, ob Ihr Prozess keine sensiblen oder privaten Informationen enthält, bevor Sie ihn veröffentlichen.",
       },
       generic: {
         unauthenticated: {
-          title: null,
-          description: null,
-          button: null,
+          title: "Benötigte Authentifizierung",
+          description:
+            "Sie müssen sich vor der Veröffentlichung von Inhalten über den AnythingLLM Community Hub authentifizieren.",
+          button: "Verbinden Sie sich mit dem Community Hub",
         },
       },
       slash_command: {
-        success_title: null,
-        success_description: null,
-        success_thank_you: null,
-        view_on_hub: null,
-        modal_title: null,
-        name_label: null,
-        name_description: null,
-        name_placeholder: null,
-        description_label: null,
-        description_description: null,
-        command_label: null,
-        command_description: null,
-        command_placeholder: null,
-        tags_label: null,
-        tags_description: null,
-        tags_placeholder: null,
-        visibility_label: null,
-        public_description: null,
-        private_description: null,
-        publish_button: null,
-        submitting: null,
-        prompt_label: null,
-        prompt_description: null,
-        prompt_placeholder: null,
+        success_title: "Erfolg!",
+        success_description:
+          "Ihre Slash-Befehle wurden im Community Hub veröffentlicht!",
+        success_thank_you: "Vielen Dank für die Weitergabe an die Community!",
+        view_on_hub: "Ansicht im Community Hub",
+        modal_title: "Slash-Befehle veröffentlichen",
+        name_label: "Name",
+        name_description: "Dies ist der Anzeigename für Ihren Slash-Befehl.",
+        name_placeholder: "Meine Slash-Befehle",
+        description_label: "Beschreibung",
+        description_description:
+          "Dies ist die Beschreibung für Ihren Slash-Befehl. Verwenden Sie diese, um den Zweck Ihres Slash-Befehls zu beschreiben.",
+        tags_label: "Schlüsselwörter",
+        tags_description:
+          "Die Tags werden verwendet, um Ihren Slash-Befehl zu kennzeichnen und die Suche zu erleichtern. Sie können mehrere Tags hinzufügen. Maximal 5 Tags. Maximal 20 Zeichen pro Tag.",
+        tags_placeholder:
+          "Geben Sie Tags ein und drücken Sie die Eingabetaste, um sie hinzuzufügen.",
+        visibility_label: "Sichtbarkeit",
+        public_description:
+          "Öffentliche Slash-Befehle sind für jeden sichtbar.",
+        private_description: "Private Slash-Befehle sind nur für Sie sichtbar.",
+        publish_button: "Veröffentlichen Sie im Community Hub",
+        submitting: "Veröffentlichung...",
+        prompt_label:
+          "Bitte geben Sie den Namen des Produkts an, das Sie verkaufen möchten.",
+        prompt_description:
+          "Dies ist der Befehl, der verwendet wird, wenn der Slash-Befehl ausgelöst wird.",
+        prompt_placeholder: "Bitte geben Sie Ihre Anfrage hier ein...",
       },
     },
   },
