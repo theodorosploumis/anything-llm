@@ -18,6 +18,7 @@ import paths from "@/utils/paths";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { chatQueryRefusalResponse } from "@/utils/chat";
+import HistoricalOutputs from "./HistoricalOutputs";
 
 const HistoricalMessage = ({
   uuid = v4(),
@@ -34,6 +35,7 @@ const HistoricalMessage = ({
   saveEditedMessage,
   forkThread,
   metrics = {},
+  outputs = [],
 }) => {
   const { t } = useTranslation();
   const { isEditing } = useEditMessage({ chatId, role });
@@ -156,6 +158,7 @@ const HistoricalMessage = ({
               </Link>
             )}
             <ChatAttachments attachments={attachments} />
+            <HistoricalOutputs outputs={outputs} />
           </div>
         )}
         <div className="flex items-start md:items-center gap-x-1">
@@ -186,14 +189,18 @@ const HistoricalMessage = ({
 export default memo(
   HistoricalMessage,
   // Skip re-render the historical message:
-  // if the content is the exact same AND (not streaming)
-  // the lastMessage status is the same (regen icon)
-  // and the chatID matches between renders. (feedback icons)
+  // - if the content is the exact same
+  // - AND (not streaming)
+  // - the lastMessage status is the same (regen icon)
+  // - the chatID matches between renders. (feedback icons)
+  // - the metrics are the same (metrics are updated in real time)
   (prevProps, nextProps) => {
     return (
       prevProps.message === nextProps.message &&
       prevProps.isLastMessage === nextProps.isLastMessage &&
-      prevProps.chatId === nextProps.chatId
+      prevProps.chatId === nextProps.chatId &&
+      JSON.stringify(prevProps.metrics) === JSON.stringify(nextProps.metrics) &&
+      JSON.stringify(prevProps.sources) === JSON.stringify(nextProps.sources)
     );
   }
 );
